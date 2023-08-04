@@ -1,6 +1,6 @@
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
-import { suportChains } from './App'
+import { suportChains } from '../App'
 
 export default function ConnectWallet() {
   const { address, isConnected } = useAccount()

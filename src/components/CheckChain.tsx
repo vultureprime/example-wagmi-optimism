@@ -1,5 +1,5 @@
 import { useAccount, useNetwork, useSwitchNetwork } from 'wagmi'
-import { suportChains } from './App'
+import { suportChains } from '../App'
 
 export default function SwitchChain() {
   const { chain } = useNetwork()
@@ -15,7 +15,7 @@ export default function SwitchChain() {
     return null
   }
   return (
-    <div>
+    <div className='switch_chain'>
       {isNotSupport
         ? 'Please Switch network'
         : chain && <div>Connected to {chain.name}</div>}

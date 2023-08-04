@@ -3,8 +3,9 @@ import { publicProvider } from '@wagmi/core/providers/public'
 import { configureChains, createConfig, WagmiConfig } from 'wagmi'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import './App.css'
-import SwitchChain from './CheckChain'
-import ConnectWallet from './ConnectWallet'
+import SwitchChain from './components/CheckChain'
+import ConnectWallet from './components/ConnectWallet'
+import ViewNFT from './components/ViewNFT'
 
 export const suportChains = [optimism, optimismGoerli]
 
@@ -27,8 +28,11 @@ const config = createConfig({
 function App() {
   return (
     <WagmiConfig config={config}>
-      <ConnectWallet />
-      <SwitchChain />
+      <div className='header'>
+        <ConnectWallet />
+        <SwitchChain />
+      </div>
+      <ViewNFT />
     </WagmiConfig>
   )
 }
