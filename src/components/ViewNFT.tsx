@@ -1,14 +1,21 @@
-import React from 'react'
+import { useState } from 'react'
 import useGetNFTCollection from '../hooks/useGetNFTCollection'
 
+type Address = `0x${string}`
 export default function ViewNFT() {
-  const { data } = useGetNFTCollection(
-    '0x7c230d7a7efbf17b2ebd2aac24a8fb5373e381b7',
-    '0xc49e9d0ebA971990007B30D3052B243E45D3e7b0'
-  )
+  const [value, setValue] = useState<string>()
+  const { data } = useGetNFTCollection({
+    contractAddress: '0x7c230d7a7efbf17b2ebd2aac24a8fb5373e381b7',
+    walletAddress: value as Address,
+  })
 
   return (
     <div>
+      <input
+        placeholder='enter Address'
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
       {data?.map((item, index) => (
         <div key={index}>
           <img src={item?.image.replace('ipfs://', 'https://ipfs.io/ipfs/')} />
