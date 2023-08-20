@@ -2,6 +2,7 @@ import { useState } from 'react'
 import useGetNFTCollection from '../hooks/useGetNFTCollection'
 
 type Address = `0x${string}`
+
 export default function ViewNFT() {
   const [value, setValue] = useState<string>()
   const { data } = useGetNFTCollection({
