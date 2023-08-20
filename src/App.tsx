@@ -5,7 +5,7 @@ import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import './App.css'
 import SwitchChain from './components/CheckChain'
 import ConnectWallet from './components/ConnectWallet'
-import ViewNFT from './components/ViewNFT'
+import ViewTokenInfo from './components/ViewTokenInfo'
 
 export const suportChains = [optimism, optimismGoerli]
 
@@ -32,7 +32,7 @@ function App() {
         <ConnectWallet />
         <SwitchChain />
       </div>
-      <ViewNFT />
+      <ViewTokenInfo />
     </WagmiConfig>
   )
 }
